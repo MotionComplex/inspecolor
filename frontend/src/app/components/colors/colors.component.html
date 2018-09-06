@@ -1,0 +1,45 @@
+<div class="container">
+    <mat-accordion *ngFor="let color of colors">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{color.name || color.hex || color.rgb}}
+                </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div>
+                <mat-grid-list cols="2">
+                    <mat-grid-tile>
+                        <mat-form-field>
+                            <input matInput disabled placeholder="id" [value]="color.id">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="name" [value]="color.name">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="hex code" [value]="color.hex">
+                        </mat-form-field>
+                        <br>
+                        <mat-form-field>
+                            <input matInput placeholder="rgb code" [value]="color.rgb">
+                        </mat-form-field>
+                    </mat-grid-tile>
+                    <mat-grid-tile>
+                        <!-- <span [style.background]="arrayColors[selectedColor]"
+                            [cpToggle]="true"
+                            [cpDialogDisplay]="'inline'"
+                            [cpCancelButton]="true"
+                            [(colorPicker)]="arrayColors[selectedColor]"></span>
+                      
+                        <div [style.background]="arrayColors['color1']"
+                            (click)="selectedColor='color1'"></div>
+                        
+                        <div [style.background]="arrayColors['color2']"
+                            (click)="selectedColor='color2'"></div> -->
+                    </mat-grid-tile>
+                </mat-grid-list>
+            </div>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

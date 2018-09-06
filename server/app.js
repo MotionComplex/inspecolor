@@ -1,4 +1,5 @@
 var express = require('express'),
+    cors = require('cors'),
     app = express(),
     port = process.env.PORT || 3000,
     mongoose = require('mongoose'),
@@ -11,6 +12,14 @@ mongoose.connect('mongodb://localhost/Colorsdb');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+// configure and enable cors
+var corsOptions = {
+    origin: 'http://localhost:4200',
+    optionalSuccessState: 200
+};
+
+app.use(cors(corsOptions));
 
 // register routes
 var routes = require('./api/routes/colorsRoutes');

@@ -11,7 +11,4 @@ module.exports = function(app) {
         .get(colors.getColorById)
         .put(colors.updateColor)
         .delete(colors.deleteColor);
-
-    // app.route('/colors/:colorName')
-    //     .get(colors.getColorByName);
 }
